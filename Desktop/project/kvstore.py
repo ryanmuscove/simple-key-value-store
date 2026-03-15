@@ -12,6 +12,8 @@ while True:
             found = False
             key = split[1]
             value = split[2]
+            with open("data.db", "a") as file: #peristance with database file
+             file.write(" ".join([command, key, value]) + "\n")
             for pair in database:
                if pair[0] == key: #pair key matching request key
                   pair[1] = value  #makes new value
@@ -30,6 +32,4 @@ while True:
 
 
 
-with open("data.db", "a") as file:
-        file.write(" ".join([command.lower(),key, value]) + "\n")
 
