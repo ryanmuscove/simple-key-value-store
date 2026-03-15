@@ -1,13 +1,15 @@
 database = []
 
-
-with open("data.db") as file: #replay
- for line in file:
-    split = line.strip().split()
-    command =split[0]
-    key = split[1]
-    value = split[2]
-    database.append([key, value])
+try:
+    with open("data.db") as file:  # replay
+        for line in file:
+            split = line.strip().split()
+            command = split[0]
+            key = split[1]
+            value = split[2]
+            database.append([key, value])
+except FileNotFoundError:
+    pass
 
 
 
