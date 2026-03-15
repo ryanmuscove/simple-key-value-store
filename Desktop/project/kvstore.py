@@ -30,4 +30,6 @@ while True:
 
 
 
+with open("data.db", "a") as file:
+        file.write(" ".join([command.lower(),key, value]) + "\n")
 
