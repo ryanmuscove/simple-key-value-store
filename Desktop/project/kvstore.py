@@ -1,5 +1,16 @@
 database = []
 
+
+with open("data.db") as file: #replay
+ for line in file:
+    split = line.strip().split()
+    command =split[0]
+    key = split[1]
+    value = split[2]
+    database.append([key, value])
+
+
+
 while True:
     user_input = input() #getting input
     if user_input.lower() == ("exit"):
