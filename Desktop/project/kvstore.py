@@ -7,16 +7,18 @@ while True:
     else: 
         split = user_input.split() #splitting 
         command = split[0]
-        if command.lower() == "set":
+
+        if command.lower() == "set": #set command
             found = False
             key = split[1]
             value = split[2]
             for pair in database:
-               if pair[0] == split[1]: #pair key matching request key
+               if pair[0] == key: #pair key matching request key
                   pair[1] = value  #makes new value
                   found = True
-               else:
-                    database.append([key, value])
+                  break
+            if not found:
+                     database.append([key, value])
       
         elif command.lower() == "get": #get command
          key = split[1]
